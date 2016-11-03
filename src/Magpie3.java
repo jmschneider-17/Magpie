@@ -29,7 +29,7 @@ public class Magpie3
 	 */
 	public String getResponse(String statement)
 	{
-		String response = "";
+		String response;
 		if (statement.length() == 0)
 		{
 			response = "Say something, please.";
@@ -38,6 +38,21 @@ public class Magpie3
 		{
 			response = "Why so negative?";
 		}
+        else if (findKeyword(statement, "dog") >=0 || findKeyword(statement, "cat") >= 0) {
+            response = "Tell me more about your pets";
+        }
+        else if (findKeyword(statement, "peavy") >= 0) {
+            response = "He sounds like a good teacher";
+        }
+        else if (findKeyword(statement, "memes") >= 0) {
+            response = "wew lad";
+        }
+        else if (findKeyword(statement, "trump") >= 0) {
+            response = "#MAGA";
+        }
+        else if (findKeyword(statement, "clinton") >= 0) {
+            response = "#ImWithHer";
+        }
 		else if (findKeyword(statement, "mother") >= 0
 				|| findKeyword(statement, "father") >= 0
 				|| findKeyword(statement, "sister") >= 0
